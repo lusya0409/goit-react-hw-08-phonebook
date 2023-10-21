@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  margin-bottom: ${props => props.theme.spasing(10)};
-  padding: ${props => props.theme.spasing(4)};
+  margin: ${props => props.theme.spasing(10)};
+  width: 100%;
 `;
 
 export const Item = styled.li`
@@ -17,16 +17,4 @@ export const Item = styled.li`
 export const SpanName = styled.span`
   display: block;
   width: 150px;
-`;
-export const ButtonDlt = styled.button`
-  padding: ${props => props.theme.spasing(2)};
-  margin: 0;
-  border: none;
-
-  color: ${props => props.theme.colors.green};
-
-  &:hover {
-    color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.red};
-  }
 `;

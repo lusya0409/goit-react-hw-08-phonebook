@@ -5,6 +5,9 @@ import { fetchContacts } from 'redux/operations';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectError, selectIsLoading } from 'redux/selectors';
+import { Avatar, Box } from '@mui/material';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
 
 export const Phonebook = () => {
   const dispatch = useDispatch();
@@ -16,13 +19,29 @@ export const Phonebook = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <Box
+      sx={{
+        my: 12,
+        mx: 4,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
+      <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+        <LockOutlinedIcon />
+      </Avatar>
+      <Typography component="h1" variant="h5">
+        Phonebook
+      </Typography>
+
       <ContactForm />
-      <h2>Contacts</h2>
+      <Typography component="h2" variant="h5">
+        Contacts
+      </Typography>
       {isLoading && !error && <b>Request in progress...</b>}
-      <ContactList />
       <Filter />
-    </div>
+      <ContactList />
+    </Box>
   );
 };

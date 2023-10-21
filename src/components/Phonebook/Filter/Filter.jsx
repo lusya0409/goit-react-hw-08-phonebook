@@ -1,3 +1,4 @@
+import { TextField } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filterSlice';
@@ -8,16 +9,17 @@ export const Filter = () => {
   const filter = useSelector(selectFilter);
 
   return (
-    <div>
-      <p>Find contacts by name</p>
-      <input
-        type="text"
-        placeholder="Start to type"
-        value={filter}
-        onChange={evt => {
-          dispatch(setFilter(evt.target.value));
-        }}
-      />
-    </div>
+    <TextField
+      margin="normal"
+      fullWidth
+      type="text"
+      id="filter"
+      label="Find contacts by name"
+      placeholder="Start to type"
+      value={filter}
+      onChange={evt => {
+        dispatch(setFilter(evt.target.value));
+      }}
+    />
   );
 };

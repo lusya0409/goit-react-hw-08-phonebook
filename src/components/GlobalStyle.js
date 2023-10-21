@@ -26,4 +26,8 @@ img {
     object-fit: cover;
     height: auto;
 }
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
 `;
