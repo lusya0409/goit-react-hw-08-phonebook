@@ -7,6 +7,7 @@ import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
+import { Toaster } from 'react-hot-toast';
 
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
@@ -56,6 +57,7 @@ export const App = () => {
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <GlobalStyle />
+      <Toaster position="top-right" reverseOrder={false} />
     </>
   );
 };
